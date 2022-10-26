@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
-public class MessagemValidacaoConfig {
+public class InterceptadorMessageConfig {
     // Interceptador de Erros para retornar mensagem em caso de erro.
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)

@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.Optional;
 
 
+import com.produtos.apirest.config.Security.AutenticacaoViaTokenFilter;
+import com.produtos.apirest.config.Security.TokenService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,6 +33,7 @@ public class ProdutoController {
 
 	@Autowired
 	ProdutoRepository produtoRepository;
+
 
 
 
