@@ -34,9 +34,6 @@ public class ProdutoController {
 	@Autowired
 	ProdutoRepository produtoRepository;
 
-
-
-
 	// GET para listar todos os produtos.
 	@ApiOperation(value="Retorna uma lista de Produtos")
 	@GetMapping("/produtos")

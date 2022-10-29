@@ -43,6 +43,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers(HttpMethod.GET, "/swagger-ui/*").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/*").authenticated()//Libera todas as rotas depois desse caminho
                 .antMatchers(HttpMethod.POST, "/auth").permitAll()
                 .anyRequest().authenticated() // As demais rotas que não estão acima devem ter autorização
@@ -54,7 +55,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     // Responsavel por recursos estaticos(js, css, img etc...)
     @Override
     public void configure(WebSecurity web) throws Exception {
-
+        web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
     }
 
 }
